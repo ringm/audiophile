@@ -4,12 +4,20 @@
   color: $color-dark;
 }
 
+.fontDarkTertiary {
+  color: $color-dark-tertiary;
+}
+
 .fontLight {
   color: $color-light;
 }
 
 .fontAccent {
   color: $color-accent;
+}
+
+.fontAccentSec {
+  color: $color-accent-secondary;
 }
 
 .textCenter {
@@ -26,60 +34,58 @@
   @extend .heading;
   font-size: 56px;
   line-height: 58px;
-  word-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .headingXl {
   @extend .heading;
   font-size: 40px;
   line-height: 44px;
-  word-spacing: 1.5px;
+  letter-spacing: 1.5px;
 }
 
 .headingL {
   @extend .heading;
   font-size: 32px;
   line-height: 36px;
-  word-spacing: 1.15px;
+  letter-spacing: 1.15px;
 }
 
 .heading {
   @extend .heading;
   font-size: 28px;
   line-height: 38px;
-  word-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .headingS {
   @extend .heading;
   font-size: 24px;
   line-height: 33px;
-  word-spacing: 1.7px;
+  letter-spacing: 1.7px;
 }
 
 .headingXs {
   @extend .heading;
   font-size: 18px;
   line-height: 24px;
-  word-spacing: 1.3px;
+  letter-spacing: 1.3px;
 }
 
 .overline {
   font-size: 14px;
   line-height: 19px;
-  word-spacing: 10px;
+  letter-spacing: 10px;
   font-weight: 400;
   text-transform: uppercase;
-  color: $color-accent-secondary;
 }
 
 .subTitle {
   font-size: 13px;
   line-height: 25px;
-  word-spacing: 1px;
+  letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
-  color: $color-accent;
 }
 
 .bodyCopy {
