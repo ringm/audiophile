@@ -1,5 +1,74 @@
 @import './variables.module.scss';
 
+/*-----LAYOUT-----*/
+
+.centerX {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centerY {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrap {
+  width: min(90%, 1110px);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.front {
+  position: relative;
+  z-index: 100;
+}
+
+.mb1 {
+  margin-bottom: 10px !important;
+}
+
+.mb2 {
+  margin-bottom: 14px !important;
+}
+
+.mb3 {
+  margin-bottom: 20px !important;
+}
+
+.mb4 {
+  margin-bottom: 28px !important;
+}
+
+.mb5 {
+  margin-bottom: 36px !important;
+}
+
+.mt1 {
+  margin-top: 10px !important;
+}
+
+.mt2 {
+  margin-top: 14px !important;
+}
+
+.mt3 {
+  margin-top: 20px !important;
+}
+
+.mt4 {
+  margin-top: 28px !important;
+}
+
+.mt5 {
+  margin-top: 36px !important;
+}
+
+/*-----FONT COLOR-----*/
+
 .fontDark {
   color: $color-dark;
 }
@@ -12,6 +81,14 @@
   color: $color-light;
 }
 
+.fontLightSec {
+  color: $color-light-secondary;
+}
+
+.fontLightTer {
+  color: $color-light-tertiary;
+}
+
 .fontAccent {
   color: $color-accent;
 }
@@ -20,56 +97,59 @@
   color: $color-accent-secondary;
 }
 
-.textCenter {
-  text-align: center;
-}
+/*-----TYPOGRAPHY-----*/
 
 .heading {
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   margin: 0;
-}
 
-.headingXxl {
-  @extend .heading;
-  font-size: 56px;
-  line-height: 58px;
-  letter-spacing: 2px;
-}
+  &Xxl {
+    @extend .heading;
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
 
-.headingXl {
-  @extend .heading;
-  font-size: 40px;
-  line-height: 44px;
-  letter-spacing: 1.5px;
-}
+  &Xl {
+    @extend .heading;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+  }
 
-.headingL {
-  @extend .heading;
-  font-size: 32px;
-  line-height: 36px;
-  letter-spacing: 1.15px;
-}
+  &L {
+    @extend .heading;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.15px;
+  }
 
-.heading {
-  @extend .heading;
-  font-size: 28px;
-  line-height: 38px;
-  letter-spacing: 2px;
-}
+  &M {
+    @extend .heading;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+  }
 
-.headingS {
-  @extend .heading;
-  font-size: 24px;
-  line-height: 33px;
-  letter-spacing: 1.7px;
-}
+  &S {
+    @extend .heading;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.7px;
+  }
 
-.headingXs {
-  @extend .heading;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 1.3px;
+  &Xs {
+    @extend .heading;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.3px;
+  }
+
+  &Xxs {
+    @extend .headingXs;
+    font-size: 15px;
+  }
 }
 
 .overline {
@@ -91,5 +171,5 @@
 .bodyCopy {
   font-size: 15px;
   line-height: 25px;
-  font-weight: 500;
+  font-weight: 200;
 }

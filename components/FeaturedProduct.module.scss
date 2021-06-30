@@ -1,0 +1,39 @@
+@import '../styles/variables.module.scss';
+
+.container {
+  background-color: $color-accent;
+  border-radius: 8px;
+  height: 600px;
+  padding: 0 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle {
+  background-color: transparent;
+  border: 1px solid $color-accent-secondary;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+
+  &Small {
+    @extend .circle;
+    width: 280px;
+    height: 280px;
+    top: 35px;
+  }
+
+  &Med {
+    @extend .circle;
+    width: 320px;
+    height: 320px;
+    top: 15px;
+  }
+
+  &Large {
+    @extend .circle;
+    width: 560px;
+    height: 560px;
+    top: -50px;
+  }
+}
