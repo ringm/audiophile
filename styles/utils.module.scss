@@ -2,6 +2,15 @@
 
 /*-----LAYOUT-----*/
 
+.container {
+  width: min(90%, 1110px);
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
 .centerX {
   display: flex;
   flex-direction: column;
@@ -67,6 +76,126 @@
   margin-top: 36px !important;
 }
 
+.ml1 {
+  margin-left: 10px !important;
+}
+
+.ml2 {
+  margin-left: 14px !important;
+}
+
+.ml3 {
+  margin-left: 20px !important;
+}
+
+.ml4 {
+  margin-left: 28px !important;
+}
+
+.ml5 {
+  margin-left: 36px !important;
+}
+
+.mr1 {
+  margin-right: 10px !important;
+}
+
+.mr2 {
+  margin-right: 14px !important;
+}
+
+.mr3 {
+  margin-right: 20px !important;
+}
+
+.mr4 {
+  margin-right: 28px !important;
+}
+
+.mr5 {
+  margin-right: 36px !important;
+}
+
+.pb1 {
+  padding-bottom: 10px !important;
+}
+
+.pb2 {
+  padding-bottom: 14px !important;
+}
+
+.pb3 {
+  padding-bottom: 20px !important;
+}
+
+.pb4 {
+  padding-bottom: 28px !important;
+}
+
+.pb5 {
+  padding-bottom: 36px !important;
+}
+
+.pt1 {
+  padding-top: 10px !important;
+}
+
+.pt2 {
+  padding-top: 14px !important;
+}
+
+.pt3 {
+  padding-top: 20px !important;
+}
+
+.pt4 {
+  padding-top: 28px !important;
+}
+
+.pt5 {
+  padding-top: 36px !important;
+}
+
+.pl1 {
+  padding-left: 10px !important;
+}
+
+.pl2 {
+  padding-left: 14px !important;
+}
+
+.pl3 {
+  padding-left: 20px !important;
+}
+
+.pl4 {
+  padding-left: 28px !important;
+}
+
+.pl5 {
+  padding-left: 36px !important;
+}
+
+.pr1 {
+  padding-right: 10px !important;
+}
+
+.pr2 {
+  padding-right: 14px !important;
+}
+
+.pr3 {
+  padding-right: 20px !important;
+}
+
+.pr4 {
+  padding-right: 28px !important;
+}
+
+.pr5 {
+  padding-right: 36px !important;
+}
+
 /*-----FONT COLOR-----*/
 
 .fontDark {
@@ -99,57 +228,57 @@
 
 /*-----TYPOGRAPHY-----*/
 
-.heading {
+%heading {
   font-weight: 600;
   text-transform: uppercase;
   margin: 0;
+}
 
-  &Xxl {
-    @extend .heading;
-    font-size: 56px;
-    line-height: 58px;
-    letter-spacing: 2px;
-  }
+.headingXxl {
+  @extend %heading;
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
 
-  &Xl {
-    @extend .heading;
-    font-size: 40px;
-    line-height: 44px;
-    letter-spacing: 1.5px;
-  }
+.headingXl {
+  @extend %heading;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.5px;
+}
 
-  &L {
-    @extend .heading;
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: 1.15px;
-  }
+.headingL {
+  @extend %heading;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.15px;
+}
 
-  &M {
-    @extend .heading;
-    font-size: 28px;
-    line-height: 38px;
-    letter-spacing: 2px;
-  }
+.headingM {
+  @extend %heading;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+}
 
-  &S {
-    @extend .heading;
-    font-size: 24px;
-    line-height: 33px;
-    letter-spacing: 1.7px;
-  }
+.headingS {
+  @extend %heading;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+}
 
-  &Xs {
-    @extend .heading;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: 1.3px;
-  }
+.headingXs {
+  @extend %heading;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1.3px;
+}
 
-  &Xxs {
-    @extend .headingXs;
-    font-size: 15px;
-  }
+.headingXxs {
+  @extend .headingXs;
+  font-size: 15px;
 }
 
 .overline {

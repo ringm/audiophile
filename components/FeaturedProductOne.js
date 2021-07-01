@@ -1,9 +1,9 @@
 import utilStyles from '../styles/utils.module.scss';
-import styles from './FeaturedProduct.module.scss';
+import styles from './FeaturedProductOne.module.scss';
 import Image from 'next/image';
 import Button from './Button';
 
-export default function FeaturedProduct({ pic, title, txt, picW, picH }) {
+export default function FeaturedProductOne({ pic, title, txt, picW, picH }) {
   return (
     <div className={`${utilStyles.wrap} ${utilStyles.centerX} ${utilStyles.centerY} ${styles.container}`}>
       <div className={styles.circleSmall}></div>
