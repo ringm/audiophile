@@ -20,7 +20,7 @@ export default function Home({ products }) {
       </Head>
       <NavBar />
       <Hero />
-      <div className={utilStyles.centerX}>
+      <div className={`${utilStyles.centerX} ${utilStyles.mb10} ${utilStyles.mt7}`}>
         <ProductCategory 
           category={"headphones"}
           pic={"/assets/category-headphones/mobile/image-xx99-mark-one.jpg"} 
@@ -34,7 +34,7 @@ export default function Home({ products }) {
           pic={"/assets/category-earphones/mobile/image-yx1-earphones.jpg"}
         />
       </div>
-      <div className={utilStyles.centerX}>
+      <div className={`${utilStyles.centerX} ${utilStyles.mb10}`}>
         <FeaturedProductOne
           pic={"/assets/home/mobile/image-speaker-zx9.png"}
           picW={172}
@@ -55,7 +55,7 @@ export default function Home({ products }) {
           title={"yx1 earphones"}
         />
       </div>
-      <div className={utilStyles.centerX}>
+      <div className={`${utilStyles.centerX} ${utilStyles.mb10}`}>
         <About />
       </div>
       <div>

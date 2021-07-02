@@ -13,7 +13,7 @@ export default function FeaturedProductThree({ pic, picW, picH, title }) {
         alt={title}
       />
       <div className={utilStyles.centerY}>
-        <h2 className={`${utilStyles.headingM} ${utilStyles.fontDark} ${utilStyles.ml4} ${utilStyles.mt5} ${utilStyles.mb3} ${utilStyles.front}`}>{title}</h2>
+        <h2 className={`${utilStyles.headingM} ${utilStyles.fontBlack} ${utilStyles.ml4} ${utilStyles.mt5} ${utilStyles.mb3} ${utilStyles.front}`}>{title}</h2>
         <Button text={"see product"} type={"two"} style={`${utilStyles.ml4} ${utilStyles.mb5}`} />
       </div>
     </div>

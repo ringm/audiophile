@@ -16,7 +16,7 @@
   &_one {
     @extend .button;
     background-color: $color-accent;
-    color: $color-light;
+    color: $color-white;
 
     &:hover {
       background-color: $color-accent-secondary;
@@ -25,20 +25,20 @@
 
   &_two {
     @extend .button;
-    background-color: $color-light;
+    background-color: $color-white;
     color: $color-dark;
-    border: 1px solid $color-dark;
+    border: 1px solid $color-black;
 
     &:hover {
-      background-color: $color-dark;
-      color: $color-light;
+      background-color: $color-black;
+      color: $color-white;
     }
   }
 
   &_three {
     @extend .button;
     background-color: transparent;
-    color: $color-dark-tertiary;
+    color: $color-dark-secondary;
     display: flex;
     align-items: center;
 
@@ -59,11 +59,11 @@
 
   &_four {
     @extend .button;
-    background-color: $color-dark;
-    color: $color-light;
+    background-color: $color-black;
+    color: $color-white;
 
     &:hover {
-      background-color: $color-dark-tertiary;
+      background-color: $color-dark-secondary;
     }
   }
 }
