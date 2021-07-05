@@ -7,13 +7,40 @@
 }
 
 .container {
+  position: relative;
   width: $width;
-  @include flexy($justify: start);
+  @include flexy;
+
+  @media (min-width: $desktop) {
+    @include flexy($dir: row);
+  }
 }
 
 .imgContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+
+  @media (min-width: $desktop) {
+    height: 588px;
+    width: 50%;
+    margin-left: $m8;
+  }
+}
+
+.img {
   border-radius: 8px;
-  overflow: hidden;
+}
+
+.dataContainer {
+  @include flexy;
+  width: 100%;
+  
+  @media (min-width: $desktop) {
+    width: 50%;
+    order: -1;
+    @include flexy($align: flex-start);
+  }
 }
 
 .title {
@@ -23,6 +50,14 @@
   text-align: center;
   letter-spacing: 1px;
   width: 16ch;
+
+  @media (min-width: $tablet) {
+    font-size: $fontSize8;
+  }
+
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
 }
 
 .accent {
@@ -35,4 +70,9 @@
   color: $color-dark-tertiary;
   font-weight: $light;
   line-height: 25px;
+  max-width: 65ch;
+
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
 }

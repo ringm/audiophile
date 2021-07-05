@@ -1,6 +1,6 @@
 @import '../styles/variables.module.scss';
 
-.button {
+%button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -12,59 +12,59 @@
   cursor: pointer;
   position: relative;
   z-index: 100;
+}
 
-  &_one {
-    @extend .button;
-    background-color: $color-accent;
-    color: $color-white;
+.button_one {
+  @extend %button;
+  background-color: $color-accent;
+  color: $color-white;
 
-    &:hover {
-      background-color: $color-accent-secondary;
-    }
+  &:hover {
+    background-color: $color-accent-secondary;
   }
+}
 
-  &_two {
-    @extend .button;
-    background-color: transparent;
-    color: $color-dark;
-    border: 1px solid $color-black;
+.button_two {
+  @extend %button;
+  background-color: transparent;
+  color: $color-dark;
+  border: 1px solid $color-black;
 
-    &:hover {
-      background-color: $color-black;
-      color: $color-white;
-    }
-  }
-
-  &_three {
-    @extend .button;
-    background-color: transparent;
-    color: $color-dark-tertiary;
-    font-weight: $bold;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-      color: $color-accent;
-    }
-
-    &::after {
-      content: '';
-      width: 8px;
-      height: 12px;
-      background-image: url('../public/assets/shared/icon-arrow-right.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin-left: 12px;
-    }
-  }
-
-  &_four {
-    @extend .button;
+  &:hover {
     background-color: $color-black;
     color: $color-white;
+  }
+}
 
-    &:hover {
-      background-color: $color-dark-secondary;
-    }
+.button_three {
+  @extend %button;
+  background-color: transparent;
+  color: $color-dark-tertiary;
+  font-weight: $bold;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &::after {
+    content: '';
+    width: 8px;
+    height: 12px;
+    background-image: url('../public/assets/shared/icon-arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 12px;
+  }
+}
+
+.button_four {
+  @extend %button;
+  background-color: $color-black;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-dark-tertiary;
   }
 }

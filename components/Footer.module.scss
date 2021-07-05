@@ -9,6 +9,10 @@
 .container {
   width: $width;
   @include flexy;
+
+  @media (min-width: $tablet) {
+    @include flexy($align: flex-start);
+  }
 }
 
 .line {
@@ -26,15 +30,29 @@
   margin-bottom: $m4;
   @include flexy;
 
+  @media (min-width: $tablet) {
+    @include flexy($dir: row);
+  }
+
   &_item {
     text-transform: uppercase;
     font-size: $fontSize3;
     font-weight: $bold;
     letter-spacing: 2px;
     color: $color-white;
+    transition: color .2s;
+
+    &:hover {
+      color: $color-accent;
+    }
 
     & + & {
       margin-top: $m4;
+
+      @media (min-width: $tablet) {
+        margin-top: $m0;
+        margin-left: $m6;
+      }
     }
   }
 }
@@ -46,6 +64,18 @@
   line-height: 25px;
   font-size: $fontSize4;
   margin-bottom: $m4;
+
+  @media (min-width: $tablet) {
+    text-align: left;
+  }
+}
+
+.lastRow {
+  width: 100%;
+
+  @media (min-width: $tablet) {
+    @include flexy($dir: row, $align: center, $justify: space-between);
+  }
 }
 
 .copyRightText {
@@ -58,6 +88,10 @@
 .socialLinks_list {
   @include flexy($dir: row);
   margin-bottom: $m8;
+
+  @media (min-width: $tablet) {
+    @include flexy($dir: row, $justify: flex-start);
+  }
 
   &_item {
     & + & {

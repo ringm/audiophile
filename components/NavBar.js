@@ -10,6 +10,7 @@ export default function NavBar() {
           width={16}
           height={15}
           alt="menu-icon"
+          className={s.img}
         />
         <Image 
           src="/assets/shared/logo.svg"
@@ -22,6 +23,7 @@ export default function NavBar() {
           width={23}
           height={20}
           alt="cart-icon"
+          className={s.img}
         />
       </div>
     </div>

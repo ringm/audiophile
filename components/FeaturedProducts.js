@@ -1,4 +1,5 @@
 import useDimensions from "react-cool-dimensions";
+import { getDevice  } from "../helpers.js";
 import FeaturedProductOne from "./FeaturedProductOne";
 import FeaturedProductTwo from "./FeaturedProductTwo";
 import FeaturedProductThree from "./FeaturedProductThree";
@@ -13,16 +14,6 @@ export default function FeaturedProducts() {
       observe(); // To re-start observing the current target element
     },
   });
-
-  function getDevice(w) {
-    if(w < 768) {
-      return 'mobile'
-    } else if( w >=768 && w < 960) {
-      return 'tablet'
-    } else {
-      return 'desktop'
-    }
-  }
 
   const device = getDevice(width);
 

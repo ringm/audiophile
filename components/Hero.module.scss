@@ -49,7 +49,7 @@
 }
 
 .title {
-  width: 15ch;
+  max-width: 15ch;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
@@ -72,7 +72,7 @@
 }
 
 .text {
-  width: 40ch;
+  max-width: 40ch;
   text-align: center;
   color: $color-dark-tertiary;
   line-height: 25px;
