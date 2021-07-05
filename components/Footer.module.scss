@@ -1,11 +1,67 @@
 @import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
 
-.footerBg {
+.wrapper {
   background-color: $color-dark;
+  @include flexy;
+}
+
+.container {
+  width: $width;
+  @include flexy;
 }
 
 .line {
   width: 100px;
   height: 4px;
   background-color: $color-accent;
+  margin-bottom: $m8;
+}
+
+.logo {
+  margin-bottom: $m4;
+}
+
+.links_list {
+  margin-bottom: $m4;
+  @include flexy;
+
+  &_item {
+    text-transform: uppercase;
+    font-size: $fontSize3;
+    font-weight: $bold;
+    letter-spacing: 2px;
+    color: $color-white;
+
+    & + & {
+      margin-top: $m4;
+    }
+  }
+}
+
+.text {
+  text-align: center;
+  color: $color-dark-tertiary;
+  font-weight: $light;
+  line-height: 25px;
+  font-size: $fontSize4;
+  margin-bottom: $m4;
+}
+
+.copyRightText {
+  text-align: center;
+  font-weight: $extra-bold;
+  color: $color-dark-tertiary;
+  margin-bottom: $m7;
+}
+
+.socialLinks_list {
+  @include flexy($dir: row);
+  margin-bottom: $m8;
+
+  &_item {
+    & + & {
+      margin-left: $m4;
+    }
+  }
 }

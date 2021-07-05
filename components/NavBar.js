@@ -1,11 +1,10 @@
-import styles from './NavBar.module.scss';
-import utilStyles from '../styles/utils.module.scss';
+import s from './NavBar.module.scss';
 import Image from 'next/image';
 
 export default function NavBar() {
   return (
-    <div className={utilStyles.centerX}>
-      <div className={`${styles.container} ${utilStyles.wrap}`}>
+    <div className={s.bg}>
+      <div className={s.container}>
         <Image 
           src="/assets/shared/icon-hamburger.svg"
           width={16}

@@ -1,0 +1,37 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
+.container {
+  position: relative;
+  @include flexy;
+  width: 100%;
+
+  & + & {
+    margin-top: $m7;
+
+    @media (min-width: $tablet) {
+      margin-top: $m0;
+      margin-left: $m1;
+    }
+  }
+}
+
+.bg {
+  position: absolute;
+  top: 25%;
+  @include bg($color: $color-light-secondary);
+  border-radius: 8px;
+  height: 185px;
+  width: 100%;
+  z-index: 0;
+}
+
+.title {
+  position: inherit;
+  z-index: 1;
+  margin: $m0;
+  text-transform: uppercase;
+  font-weight: $extra-bold;
+  font-size: $fontSize4;
+  letter-spacing: 1.07px;
+}

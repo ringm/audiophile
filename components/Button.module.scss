@@ -25,7 +25,7 @@
 
   &_two {
     @extend .button;
-    background-color: $color-white;
+    background-color: transparent;
     color: $color-dark;
     border: 1px solid $color-black;
 
@@ -38,7 +38,8 @@
   &_three {
     @extend .button;
     background-color: transparent;
-    color: $color-dark-secondary;
+    color: $color-dark-tertiary;
+    font-weight: $bold;
     display: flex;
     align-items: center;
 

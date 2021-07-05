@@ -1,10 +1,58 @@
-$color-black: #000;
-$color-dark: #101010;
-$color-dark-secondary: #808080;
+/*--- COLORS ---*/
+
+$color-accent: #D87D4A;
+$color-accent-secondary: #fbaf85;
 
 $color-white: #fff;
 $color-light: #fafafa;
 $color-light-secondary: #f1f1f1;
 
-$color-accent: #D87D4A;
-$color-accent-secondary: #fbaf85;
+$color-black: #000;
+$color-dark: #101010;
+$color-dark-secondary: #191919;
+$color-dark-tertiary: #808080;
+
+/*---FONT-SIZES---*/
+
+$fontSize1: 12px;
+$fontSize2: 13px;
+$fontSize3: 14px;
+$fontSize4: 15px;
+$fontSize5: 18px;
+$fontSize6: 24px;
+$fontSize7: 28px;
+$fontSize8: 36px;
+$fontSize9: 56px;
+
+/*---FONT-WEIGHTS---*/
+
+$light: 200;
+$regular: 400;
+$medium: 500;
+$bold: 600;
+$extra-bold: 800;
+
+/*---LAYOUT---*/
+
+/* max-width */
+$width: min(90%, 1100px);
+
+/* margins / paddings */
+
+$m0 : 0px; 
+$m1 : 10px; 
+$m2 : 14px;
+$m3 : 20px; 
+$m4 : 24px;
+$m5 : 28px; 
+$m6 : 36px;
+$m7 : 40px;
+$m8 : 50px;
+$m9: 100px;
+$m10: 120px;
+$m11: 150px;
+
+/* breakpoints */
+
+$tablet: 768px;
+$desktop: 968px;

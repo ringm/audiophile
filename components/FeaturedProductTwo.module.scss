@@ -1,14 +1,46 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
 .container {
+  position: relative;
+  @include flexy($align: flex-start);
+  height: 320px;
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  position: relative;
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  margin-bottom: $m5;
+
+  @media (min-width: $desktop) {
+    margin-bottom: $m8;
+  }
 }
 
-.img {
-  position: absolute;
+.title {
+  position: inherit;
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: $fontSize7;
+  font-weight: $bold;
+  margin-top: $m0;
+  margin-left: $m6;
+
+  @media (min-width: $tablet) {
+    margin-left: $m8;
+  }
+
+  @media (min-width: $desktop) {
+    margin-left: $m9;
+  }
+}
+
+.button {
+  margin-left: $m6;
+
+  @media (min-width: $tablet) {
+    margin-left: $m8;
+  }
+
+  @media (min-width: $desktop) {
+    margin-left: $m9;
+  }
 }

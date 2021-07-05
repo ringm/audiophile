@@ -1,0 +1,16 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
+.wrapper {
+  @include flexy;
+  margin: $m9 $m0;
+}
+
+.container {
+  width: $width;
+  @include flexy;
+
+  @media (min-width: $tablet) {
+    @include flexy($dir: row, $justify: space-between);
+  }
+}

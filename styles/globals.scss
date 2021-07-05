@@ -1,8 +1,14 @@
+@import './variables.module.scss';
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Manrope', sans-serif;
+}
+
+body {
+  background-color: $color-light;
 }
 
 a {
@@ -18,5 +24,3 @@ li, ul {
 * {
   box-sizing: border-box;
 }
-
-$blue: #005433;
