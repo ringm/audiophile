@@ -30,7 +30,7 @@
   @include flexy($align: flex-start);
   background-color: $color-light-secondary;
   border-radius: 8px;
-  margin-top: $m6;
+  padding: $m6 0;
   
   @media (min-width: $tablet) {
     height: 100%;
