@@ -5,10 +5,9 @@
   position: relative;
   @include flexy;
   width: 100%;
+  margin-top: $m9;
 
   & + & {
-    margin-top: $m7;
-
     @media (min-width: $tablet) {
       margin-top: $m0;
       margin-left: $m1;
@@ -16,22 +15,21 @@
   }
 }
 
-.bg {
-  position: absolute;
-  top: 25%;
-  @include bg($color: $color-light-secondary);
-  border-radius: 8px;
-  height: 185px;
-  width: 100%;
-  z-index: 0;
+.imgContainer {
+  position: relative;
+  margin: 0 auto;
+  width: 60%;
+  height: 120px;
+  margin-bottom: $m4;
 }
 
 .title {
-  position: inherit;
-  z-index: 1;
-  margin: $m0;
+  text-align: center;
+  margin: $m2;
   text-transform: uppercase;
   font-weight: $bold;
-  font-size: $fontSize4;
-  letter-spacing: 1.07px;
+  font-size: $fontSize6;
+  letter-spacing: 1.71px;
+  margin-bottom: $m4;
+  max-width: 15ch;
 }
