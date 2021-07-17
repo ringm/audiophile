@@ -1,0 +1,25 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
+.section {
+  width: 100%;
+}
+
+.title {
+  margin-top: $m0;
+  font-size: $fontSize6;
+  font-weight: $bold;
+  letter-spacing: 0.86px;
+
+  @include mq($tablet) {
+    font-size: $fontSize7;
+  }
+}
+
+.desc {
+  font-size: $fontSize4;
+  font-weight: $light;
+  color: $color-dark-tertiary;
+  line-height: 25px;
+  max-width: 75ch;
+}

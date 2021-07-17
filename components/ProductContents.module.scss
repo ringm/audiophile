@@ -1,0 +1,61 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
+.section {
+  width: 100%;
+
+  @include mq($tablet) {
+    @include flexy($dir: row, $align: flex-start, $justify: flex-start);
+  }
+
+  @include mq($desktop) {
+    @include flexy($align: flex-start);
+    width: 45%;
+    margin-left: $m8;
+  }
+}
+
+.title {
+  margin-top: $m0;
+  font-size: $fontSize6;
+  font-weight: $bold;
+  letter-spacing: 0.86px;
+
+  @include mq($tablet) {
+    width: 50%;
+    font-size: $fontSize7;
+  }
+
+  @include mq($desktop) {
+    width: auto;
+  }
+}
+
+.list {
+  @include flexy($align: flex-start);
+
+  @include mq($tablet) {
+    margin-top: $m0;
+  }
+
+  &__item {
+    @include flexy($dir: row);
+    font-size: $fontSize4;
+
+    @include mq($tablet) {
+      &:first-child p {
+        margin-top: $m0;
+      }
+    }
+
+    &_accent {
+      color: $color-accent;
+      font-weight: $bold;
+      margin-right: $m2;
+    }
+    
+    &_text {
+      color: $color-dark-tertiary;
+    }
+  }
+}

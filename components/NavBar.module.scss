@@ -1,17 +1,38 @@
 @import '../styles/variables.module.scss';
 @import '../styles/utils.module.scss';
 
+.wrapper {
+  position: relative;
+}
+
 .bg {
   @include flexy;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.pAbsolute {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+
+.pRelative {
+  position: relative;
+  z-index: 300;
+}
+
+.bgTransparent {
+  background-color: transparent;
+}
+
+.bgBlack {
+  background-color: black;
 }
 
 .container {
   @include flexy(row, center, space-between);
   width: $width;
-  position: absolute;
-  top: 0;
-  padding: 30px 0;
-  z-index: 100;
 }
 
 .img {

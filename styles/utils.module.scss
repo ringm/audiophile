@@ -15,6 +15,12 @@
   background-position: $pos;
 }
 
+@mixin mq($device) {
+  @media (min-width: $device) {
+    @content;
+  }
+}
+
 .product_categories {
   @include flexy;
   width: $width;
@@ -26,4 +32,8 @@
 
 .featured_products {
   @include flexy;
+}
+
+.centerText {
+  text-align: center
 }

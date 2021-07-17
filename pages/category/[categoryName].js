@@ -1,9 +1,12 @@
 import useDimensions from "react-cool-dimensions";
 import { getDevice  } from "../../helpers";
 import Head from 'next/head';
+import NavBar from "../../components/NavBar";
+import SubNav from "../../components/SubNav";
 import Product from '../../components/Product';
 import ProductCategories from "../../components/ProductCategories";
 import About from "../../components/About";
+import Footer from "../../components/Footer";
 
 export default function Category() {
   const { observe, unobserve, width, height, entry } = useDimensions({
@@ -25,6 +28,10 @@ export default function Category() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;800&display=swap" rel="stylesheet"></link>
       </Head>
+      <NavBar bgColor='black' />
+      <SubNav
+        title="headphones"
+      />
       <Product
         ref={observe}
         img={`/assets/product-xx99-mark-two-headphones/${device}/image-product.jpg`}
@@ -44,6 +51,7 @@ export default function Category() {
       />
       <ProductCategories />
       <About />
+      <Footer />
     </>
   )
 }

@@ -15,7 +15,10 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;800&display=swap" rel="stylesheet"></link>
       </Head>
-      <NavBar />
+      <NavBar 
+        bgColor='transparent'
+        position='absolute'
+      />
       <Hero />
       <ProductCategories />
       <FeaturedProducts />

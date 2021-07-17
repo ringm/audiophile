@@ -1,0 +1,27 @@
+@import '../styles/variables.module.scss';
+@import '../styles/utils.module.scss';
+
+.section {
+  width: 100%;
+  margin-bottom: $m9;
+}
+
+.title {
+  margin-top: $m0;
+  font-size: $fontSize6;
+  font-weight: $bold;
+  text-align: center;
+  letter-spacing: 0.86px;
+
+  @include mq($tablet) {
+    font-size: $fontSize7;
+  }
+}
+
+.otherProducts {
+  @include flexy;
+
+  @include mq($tablet) {
+    @include flexy($dir: row);
+  }
+}

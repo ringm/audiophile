@@ -3,11 +3,11 @@
 
 .wrapper {
   @include flexy;
-  margin: $m9 $m0;
+  margin-bottom: $m9;
 }
 
 .container {
-  width: $width;
+  width: 100%;
   @include flexy;
 
   @media (min-width: $tablet) {
