@@ -6,24 +6,38 @@
 }
 
 .wrapper {
-  @include flexy($justify: flex-start);
+  @include flexy;
+  width: 100%;
+  position: absolute;
+}
+
+.bg {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
   z-index: 200;
   @include bg($color: rgba(0, 0, 0, 0.5));
 }
 
 .container {
+  @include flexy;
+  width: $width;
+
+  @include mq($tablet) {
+    @include flexy($align: flex-end);
+  }
+}
+
+.cart {
   @include bg($color: $color-light);
   @include flexy;
-  margin-top: $m10;
   border-radius: 8px;
-  width: $width;
+  width: min(100%, 380px);
   padding: $m4;
+  z-index: 300;
+  margin-top: $m6;
 
   & > * + * {
     margin-top: $m4;
