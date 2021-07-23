@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .circle {
+    @apply bg-transparent border border-accentSec rounded-full absolute z-0;
+  }
+}

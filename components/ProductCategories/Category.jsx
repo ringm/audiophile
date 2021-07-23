@@ -3,7 +3,7 @@ import { Button } from '@/root/components/shared/Button';
 
 export function Category({ pic, category }) {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full mt-8 first:mt-0">
+    <div className="relative flex flex-col items-center justify-center w-full mt-8 md:mt-0 md:ml-8 md:first:ml-0 first:mt-0">
       <div className="absolute z-0 top-1/4 bg-lightSec w-full h-185px rounded"></div>
       <div className="relative w-full h-125px">
         <Image

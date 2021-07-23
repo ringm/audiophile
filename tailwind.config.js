@@ -18,13 +18,24 @@ module.exports = {
         'home-tablet': "url(/assets/home/tablet/image-header.jpg)",
         'home-desktop': "url(/assets/home/desktop/image-hero.jpg)",
       },
+      width: {
+        '280px': '280px',
+        '320px': '320px',
+        '475px': '475px',
+        '520px': '520px',
+        '945px': '945px'
+      },
       height: {
         '125px': '125px',
         '185px': '185px',
+        '200px': '200px',
+        '280px': '280px',
         '320px': '320px',
+        '475px': '475px',
         '520px': '520px',
         '600px': '600px',
-        '720px': '720px'
+        '720px': '720px',
+        '945px': '945px'
       },
       letterSpacing: {
         'superWidest': '0.625em'
