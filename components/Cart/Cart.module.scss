@@ -1,0 +1,78 @@
+@import '@/root/styles/variables.module.scss';
+@import '@/root/styles/utils.module.scss';
+
+.fullWidth {
+  width: 100%;
+}
+
+.wrapper {
+  @include flexy($justify: flex-start);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 200;
+  @include bg($color: rgba(0, 0, 0, 0.5));
+}
+
+.container {
+  @include bg($color: $color-light);
+  @include flexy;
+  margin-top: $m10;
+  border-radius: 8px;
+  width: min(100%, 450px);
+  padding: $m4;
+
+  & > * + * {
+    margin-top: $m4;
+  }
+}
+
+.titleContainer {
+  @include flexy($dir: row, $justify: space-between);
+  width: 100%;
+}
+
+.title {
+  color: $color-black;
+  font-size: $fontSize5;
+  font-weight: $bold;
+  letter-spacing: 1.29px;
+  margin: $m0;
+}
+
+.removeAll {
+  color: $color-dark-tertiary;
+  font-size: $fontSize4;
+  font-weight: $light;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cartItems {
+  width: 100%;
+
+  & > * + * {
+    margin-top: $m4;
+  }
+}
+
+.totalContainer {
+  @include flexy($dir: row, $justify: space-between);
+  width: 100%;
+}
+
+.total {
+  color: $color-dark-tertiary;
+  text-transform: uppercase;
+  font-size: $fontSize4;
+  font-weight: $light;
+}
+
+.amount {
+  color: $color-black;
+  font-weight: $bold;
+  font-size: $fontSize5;
+}

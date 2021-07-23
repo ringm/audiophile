@@ -1,0 +1,61 @@
+%circle {
+  background-color: transparent;
+  border: 1px solid #fbaf85;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+}
+
+.circle_small {
+  @extend %circle;
+  width: 280px;
+  height: 280px;
+  top: 35px;
+
+  @media (min-width: 768px) {
+    width: 475px;
+    height: 475px;
+    top: -5%;
+  }
+
+  @media (min-width: 960px) {
+    top: 50%;
+    left: 9%;
+  }
+}
+
+.circle_med {
+  @extend %circle;
+  width: 320px;
+  height: 320px;
+  top: 15px;
+
+  @media (min-width: 768px) {
+    width: 540px;
+    height: 540px;
+    top: -9%;
+  }
+
+  @media (min-width: 960px) {
+    top: 44%;
+    left: 6%;
+  }
+}
+
+.circle_large {
+  @extend %circle;
+  width: 560px;
+  height: 560px;
+  top: -50px;
+
+  @media (min-width: 768px) {
+    width: 945px;
+    height: 945px;
+    top: -35%;
+  }
+
+  @media (min-width: 960px) {
+    top: -10%;
+    left: -12%;
+  }
+}

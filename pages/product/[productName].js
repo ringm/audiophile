@@ -1,16 +1,13 @@
 import useDimensions from "react-cool-dimensions";
-import { getDevice } from '../../helpers';
+import { getDevice } from '@/root/utils/helpers';
 import s from './[productName].module.scss';
 import Head from "next/head";
-import NavBar from "../../components/NavBar";
-import ProductHeader from '../../components/ProductHeader';
-import ProductFeatures from '../../components/ProductFeatures';
-import ProductContents from '../../components/ProductContents';
-import ProductGallery from '../../components/ProductGallery';
-import RelatedProducts from "../../components/RelatedProducts";
-import ProductCategories from '../../components/ProductCategories';
-import About from "../../components/About";
-import Footer from '../../components/Footer';
+import NavBar from "@/root/components/NavBar";
+import { ProductHeader, ProductFeatures, ProductContents, ProductGallery } from '@/root/components/Product';
+import { RelatedProducts } from "@/root/components/RelatedProducts";
+import { ProductCategories } from '@/root/components/ProductCategories';
+import About from "@/root/components/About";
+import Footer from '@/root/components/Footer';
 
 export default function ProductName() {
 

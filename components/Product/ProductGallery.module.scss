@@ -1,0 +1,74 @@
+@import '@/root/styles/variables.module.scss';
+@import '@/root/styles/utils.module.scss';
+
+%imgContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.section {
+  width: 100%;
+  margin-bottom: $m9;
+}
+
+.title {
+  margin-top: $m0;
+  font-size: $fontSize6;
+  font-weight: $bold;
+  letter-spacing: 0.86px;
+
+  @include mq($tablet) {
+    font-size: $fontSize7;
+  }
+}
+
+.gallery {
+  display: grid;
+  width: 100%;
+  grid-row-gap: 25px;
+  border-radius: 8px;
+
+  @include mq($tablet) {
+    grid-gap: 10px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1f 1f;
+  }
+
+  &__img_one {
+    @extend %imgContainer;
+    height: 174px;
+
+    @include mq($tablet) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; 
+      height: 100%;
+    }
+  }
+
+  &__img_two {
+    @extend %imgContainer;
+    height: 174px;
+
+    @include mq($tablet) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3; 
+      height: 100%
+    }
+  }
+
+  &__img_three {
+    @extend %imgContainer;
+    height: 368px;
+
+    @include mq($tablet) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3; 
+    }
+
+    @include mq($desktop) {
+      height: 592px;
+    }
+  }
+}

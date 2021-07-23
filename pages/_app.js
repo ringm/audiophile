@@ -1,5 +1,5 @@
 import productData from '../data.json';
-import '../styles/globals.scss';
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }) {
   const products = productData;

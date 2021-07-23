@@ -1,0 +1,38 @@
+@import '@/root/styles/variables.module.scss';
+@import '@/root/styles/utils.module.scss';
+
+.container {
+  @include flexy($dir: row, $justify: space-between);
+  width: 100%;
+
+  & > * + * {
+    margin-left: $m3;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.dataContainer {
+  @include flexy($align: flex-start);
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: $fontSize4;
+  color: $color-black;
+  font-weight: $bold;
+  margin: $m0;
+}
+
+.price {
+  font-size: $fontSize3;
+  font-weight: $bold;
+  color: $color-dark-tertiary;
+  margin: $m0;
+}

@@ -1,12 +1,12 @@
 import useDimensions from "react-cool-dimensions";
-import { getDevice  } from "../../helpers";
+import { getDevice } from "@/root/utils/helpers";
 import Head from 'next/head';
-import NavBar from "../../components/NavBar";
-import SubNav from "../../components/SubNav";
-import Product from '../../components/Product';
-import ProductCategories from "../../components/ProductCategories";
-import About from "../../components/About";
-import Footer from "../../components/Footer";
+import NavBar from "@/root/components/NavBar";
+import SubNav from "@/root/components/SubNav";
+import { Product } from '@/root/components/Product';
+import { ProductCategories } from "@/root/components/ProductCategories";
+import About from "@/root/components/About";
+import Footer from "@/root/components/Footer";
 
 export default function Category() {
   const { observe, unobserve, width, height, entry } = useDimensions({

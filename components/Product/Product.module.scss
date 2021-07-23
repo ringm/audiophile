@@ -1,0 +1,98 @@
+@import '@/root/styles/variables.module.scss';
+@import '@/root/styles//utils.module.scss';
+
+.wrapper {
+  @include flexy;
+
+  @media (min-width: $desktop) {
+    & + & {
+      margin-top: $m12;
+    }
+
+    &:nth-child(even) .container {
+      @include flexy($dir: row-reverse);
+    }
+
+    &:nth-child(even) .container .dataContainer {
+      margin-left: $m8;
+    }
+  }
+}
+
+.container {
+  width: $width;
+
+  @media (min-width: $desktop) {
+    @include flexy($dir: row);
+  }
+}
+
+.imgContainer {
+  @include flexy;
+  position: relative;
+  height: 352px;
+
+  @media (min-width: $tablet) {
+    & > * {
+      width: 60%;
+      margin: 0 auto !important;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    width: 50%;
+    & > * {
+      width: auto;
+    }
+  }
+}
+
+.dataContainer {
+  @include flexy;
+  text-align: center;
+
+  @media (min-width: $desktop) {
+    @include flexy($align: flex-start);
+    text-align: left;
+    width: 50%;
+  }
+}
+
+.overLine {
+  text-transform: uppercase;
+  color: $color-accent;
+  font-size: $fontSize3;
+  letter-spacing: 10px;
+  font-weight: $regular;
+  margin-bottom: $m4;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: $fontSize7;
+  letter-spacing: 1px;
+  max-width: 14ch;
+  margin-top: $m0;
+
+  @media (min-width: $tablet) {
+    font-size: $fontSize8;
+  }
+
+  @media (min-width: $desktop) {
+    text-align: left;
+  }
+}
+
+.desc {
+  margin-top: $m0;
+  color: $color-dark-tertiary;
+  font-size: $fontSize4;
+  line-height: 25px;
+  max-width: 60ch;
+  margin-bottom: $m4;
+
+  @media (min-width:$desktop) {
+    max-width: 45ch;
+  }
+}

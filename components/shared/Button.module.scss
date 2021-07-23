@@ -1,0 +1,71 @@
+@import '@/root/styles/variables.module.scss';
+
+%button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: $bold;
+  font-size: 13px;
+  letter-spacing: 1.8px;
+  transition: all .2s;
+  width: fit-content;
+  padding: 16px 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  text-align: center
+}
+
+.button_one {
+  @extend %button;
+  background-color: $color-accent;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-accent-secondary;
+  }
+}
+
+.button_two {
+  @extend %button;
+  background-color: transparent;
+  color: $color-dark;
+  border: 1px solid $color-black;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+
+.button_three {
+  @extend %button;
+  background-color: transparent;
+  color: $color-dark-tertiary;
+  font-weight: $bold;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  &::after {
+    content: '';
+    width: 8px;
+    height: 12px;
+    background-image: url('../../public/assets/shared/icon-arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 12px;
+  }
+}
+
+.button_four {
+  @extend %button;
+  background-color: $color-black;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-dark-tertiary;
+  }
+}
