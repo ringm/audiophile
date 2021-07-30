@@ -1,9 +1,8 @@
 import useDimensions from "react-cool-dimensions";
 import { getDevice } from '@/root/utils/helpers';
-import s from './RelatedProducts.module.scss';
 import { OtherProducts } from './OtherProducts';
 
-export function RelatedProducts() {
+export function RelatedProducts({ product, onProductSelect }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -17,21 +16,21 @@ export function RelatedProducts() {
   const device = getDevice(width);
 
   return (
-    <div ref={observe} className={s.section}>
-      <h2 className={s.title}>YOU MAY ALSO LIKE</h2>
-      <div className={s.otherProducts}>
-        <OtherProducts
-          img={`/assets/product-xx59-headphones/${device}/image-product.jpg`}
-          title="xx59 headphones"
-        />
-        <OtherProducts
-          img={`/assets/product-xx99-mark-one-headphones/${device}/image-product.jpg`}
-          title="xx59 headphones"
-        />
-        <OtherProducts
-          img={`/assets/product-xx99-mark-two-headphones/${device}/image-product.jpg`}
-          title="xx59 headphones"
-        />
+    <div ref={observe} className="w-full mb-9 mt-12">
+      <h2 className="mt-0 text-2xl md:text-3xl font-semibold text-center">YOU MAY ALSO LIKE</h2>
+      <div className="flexy-col-center md:flexy-row-center">
+        {product.others.map(other => {
+          return (
+            <OtherProducts
+              key={other.id}
+              id={other.id}
+              img={other.image[device]}
+              title={other.name}
+              slug={other.slug}
+              onProductSelect={onProductSelect}
+            />
+          )
+        })}
       </div>
     </div>
   )

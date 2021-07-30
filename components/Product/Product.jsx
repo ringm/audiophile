@@ -1,24 +1,27 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/root/components/shared/Button';
-import s from './Product.module.scss';
 
-export function Product({ img, title, desc, newProduct }) {
+export function Product({ product, img, onProductSelect }) {
   return (
-    <div className={s.wrapper}>
-      <div className={s.container}>
-        <div className={s.imgContainer}>
+    <div className="flexy-col-center mt-4 md:mt-12 lg:first:mt-0">
+      <div className="container lg:flexy-row-center lg:even:flexy-row-reverse-center">
+        <div className="flexy-col-center relative h-[352px] lg:w-1/2">
           <Image
             src={img}
             layout="fill"
-            objectFit="cover"
-            alt={title}
+            objectFit="contain"
+            alt={product.name}
+            className="md:w-[60%] lg:w-auto md:mx-auto lg:mx-0"
           />
         </div>
-        <div className={s.dataContainer}>
-          {newProduct && <p className={s.overLine}>new product</p>}
-          <h2 className={s.title}>{title}</h2>
-          <p className={s.desc}>{desc}</p>
-          <Button text={"see product"} type={"one"} />
+        <div className="flexy-col-center lg:flexy-col-start text-center lg:text-left lg:flex-start lg:w-1/2 lg:even:ml-8">
+          {product.new && <p className="uppercase text-center text-accent text-sm tracking-superWidest font-normal mb-2 mt-2">new product</p>}
+          <h2 className="uppercase text-center font-bold lg:text-left text-3xl md:text-4xl tracking-wider max-w-md my-4">{product.name}</h2>
+          <p className="mt-0 text-darkTer font-sm max-w-lg lg:max-w-md mb-6">{product.description}</p>
+          <Link as={`/${product.category}/${product.slug}`} href="/[category]/[product]">
+            <Button text={"see product"} type={"one"} onClick={() => onProductSelect(product.id)} />
+          </Link>
         </div>
       </div>
     </div>

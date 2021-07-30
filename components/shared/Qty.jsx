@@ -1,11 +1,9 @@
-import s from './Qty.module.scss';
-
 export function Qty() {
   return (
-    <div className={s.qty}>
-      <button className={s.qty__button}>-</button>
-      <span className={s.qty__number}>1</span>
-      <button className={s.qty__button}>+</button>
+    <div className="flex items-center justify-around bg-lightSec p-2 w-full max-w-[130px] mr-4">
+      <button className="text-darkTer font-semibold cursor-pointer">-</button>
+      <span className="my-0 mx-4 font-md font-semibold">1</span>
+      <button className="text-darkTer font-semibold cursor-pointer">+</button>
     </div>
   )
 }

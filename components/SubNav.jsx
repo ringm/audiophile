@@ -1,10 +1,8 @@
-import s from './SubNav.module.scss';
-
-export default function SubNav({ title }) {
+export function SubNav({ title }) {
   return (
-    <div className={s.bg}>
-      <div className={s.container}>
-        <h2 className={s.title}>{title}</h2>
+    <div className="flexy-col-center bg-black py-4 w-full">
+      <div className="flexy-col-center container">
+        <h2 className="text-white text-center uppercase text-3xl font-medium tracking-wider">{title}</h2>
       </div>
     </div>
   )

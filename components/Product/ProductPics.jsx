@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import s from './ProductPics.module.scss';
 
 export function ProductPics({ pics }) {
   return (
-    <div className={s.wrapper}>
-      <div className={s.container}>
+    <div className="flexy-col-center w-full">
+      <div className="container">
         <div className={s.pic_container_one}>
           <Image />
         </div>

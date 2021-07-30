@@ -1,20 +1,23 @@
 import { Category } from "./Category";
 
-export function ProductCategories() {
+export function ProductCategories({ styles, onCategorySelect }) {
   return (
-    <div className="flex flex-col items-center justify-center mt-24">
-      <div className="w-11/12 max-w-screen-lg flex flex-col md:flex-row items-center justify-center">
+    <div className={`flexy-col-center mt-24 ${styles}`}>
+      <div className="container flex flexy-col-center md:flexy-row-center">
         <Category
           category={"headphones"}
           pic={"/assets/shared/desktop/image-headphones.png"}
+          onCategorySelect={onCategorySelect}
         />
         <Category
           category={"speakers"}
           pic={"/assets/shared/desktop/image-speakers.png"}
+          onCategorySelect={onCategorySelect}
         />
         <Category
           category={"earphones"}
           pic={"/assets/shared/desktop/image-earphones.png"}
+          onCategorySelect={onCategorySelect}
         />
       </div>
     </div>

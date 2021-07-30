@@ -1,9 +1,8 @@
 import useDimensions from "react-cool-dimensions";
 import { getDevice } from '@/root/utils/helpers';
 import Image from 'next/image';
-import s from './ProductGallery.module.scss'
 
-export function ProductGallery() {
+export function ProductGallery({ product }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -17,28 +16,28 @@ export function ProductGallery() {
   const device = getDevice(width);
 
   return (
-    <div ref={observe} className={s.section}>
-      <div className={s.gallery}>
-        <div className={s.gallery__img_one}>
+    <div ref={observe} className="w-full mb-8">
+      <div className="w-full rounded grid gap-y-6 md:gap-y-2 md:gap-x-2 md:grid-cols-40/60 md:grid-rows-2">
+        <div className="relative w-full overflow-hidden rounded h-[174px] md:h-full md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2">
           <Image
-            src={`/assets/product-xx59-headphones/${device}/image-gallery-1.jpg`}
-            alt="xx59 headphones 01"
+            src={product.gallery.first[device]}
+            alt={`${product.name}-01`}
             layout="fill"
             objectFit="cover"
           />
         </div>
-        <div className={s.gallery__img_two}>
+        <div className="relative w-full overflow-hidden rounded h-[174px] md:h-full md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3">
           <Image
-            src={`/assets/product-xx59-headphones/${device}/image-gallery-2.jpg`}
-            alt="xx59 headphones 02"
+            src={product.gallery.second[device]}
+            alt={`${product.name}-02`}
             layout="fill"
             objectFit="cover"
           />
         </div>
-        <div className={s.gallery__img_three}>
+        <div className="relative w-full overflow-hidden rounded h-[368px] lg:h-[592px] md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-3">
           <Image
-            src={`/assets/product-xx59-headphones/${device}/image-gallery-3.jpg`}
-            alt="xx59 headphones 03"
+            src={product.gallery.third[device]}
+            alt={`${product.name}-03`}
             layout="fill"
             objectFit="cover"
           />

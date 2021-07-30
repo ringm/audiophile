@@ -1,52 +1,51 @@
-@import '@/root/styles/variables.module.scss';
 
 %button {
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: $bold;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: 1.8px;
   transition: all .2s;
-  width: fit-content;
   padding: 16px 32px;
   cursor: pointer;
   position: relative;
-  z-index: 100;
+  display: inline-block;
+  z-index: 40;
   text-align: center
 }
 
 .button_one {
   @extend %button;
-  background-color: $color-accent;
-  color: $color-white;
+  background-color: #D87D4A;
+  color: #fff;
 
   &:hover {
-    background-color: $color-accent-secondary;
+    background-color: #fbaf85;
   }
 }
 
 .button_two {
   @extend %button;
   background-color: transparent;
-  color: $color-dark;
-  border: 1px solid $color-black;
+  color: #101010;
+  border: 1px solid #000;
 
   &:hover {
-    background-color: $color-black;
-    color: $color-white;
+    background-color: #000;
+    color: #fff;
   }
 }
 
 .button_three {
   @extend %button;
   background-color: transparent;
-  color: $color-dark-tertiary;
-  font-weight: $bold;
+  color: #808080;
+  font-weight: 600;
   display: flex;
   align-items: center;
 
   &:hover {
-    color: $color-accent;
+    color: #D87D4A;
   }
 
   &::after {
@@ -62,10 +61,10 @@
 
 .button_four {
   @extend %button;
-  background-color: $color-black;
-  color: $color-white;
+  background-color: #000;
+  color: #fff;
 
   &:hover {
-    background-color: $color-dark-tertiary;
+    background-color: #808080;
   }
 }

@@ -9,6 +9,7 @@ module.exports = {
         accentSec: '#fbaf85',
         light: '#fafafa',
         lightSec: '#f1f1f1',
+        lightTer: '#CFCFCF',
         dark: '#101010',
         darkSec: '#191919',
         darkTer: '#808080',
@@ -42,11 +43,16 @@ module.exports = {
       },
       borderRadius: {
         DEFAULT: '8px'
+      },
+      gridTemplateColumns: {
+        '40/60': '40% 60%',
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

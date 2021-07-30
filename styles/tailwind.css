@@ -2,8 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn {
+    @apply uppercase tracking-wider font-semibold text-sm w-max text-center cursor-pointer relative z-50;
+  }
+}
+
 @layer utilities {
   .circle {
     @apply bg-transparent border border-accentSec rounded-full absolute z-0;
+  }
+  .flexy-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+  .flexy-col-reverse-center {
+    @apply flex flex-col-reverse items-center justify-center;
+  }
+  .flexy-col-start {
+    @apply flex flex-col items-start justify-center;
+  }
+  .flexy-row-center {
+    @apply flex flex-row items-center justify-center;
+  }
+  .flexy-row-reverse-center {
+    @apply flex flex-row-reverse items-center justify-center;
+  }
+  .flexy-row-start {
+    @apply flex flex-row items-center justify-start;
+  }
+  .container {
+    width: min(90%, 960px);
   }
 }

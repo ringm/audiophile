@@ -1,12 +1,11 @@
 import useDimensions from "react-cool-dimensions";
 import { getDevice } from '@/root/utils/helpers';
-import s from './ProductHeader.module.scss';
 import Image from 'next/image'
 import { Qty } from '@/root/components/shared/Qty';
 import { Button } from '@/root/components/shared/Button';
 
 
-export function ProductHeader({ newProduct }) {
+export function ProductHeader({ product }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -20,24 +19,24 @@ export function ProductHeader({ newProduct }) {
   const device = getDevice(width);
 
   return (
-    <div ref={observe} className={s.productHeader}>
-      <div className={s.imgContainer}>
+    <div ref={observe} className="flexy-col-center mb-12 mt-8 md:flexy-row-center md:my-24 lg:my-16">
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[560px] mb-5 md:w-1/2 md:mb-0">
         <Image
-          src={`/assets/product-xx59-headphones/${device}/image-product.jpg`}
+          src={product.image[device]}
           layout="fill"
           objectFit="cover"
-          alt="xx59 headphones"
+          alt={product.name}
         />
       </div>
-      <div className={s.dataContainer}>
-        {newProduct && <p className={s.overTitle}>new product</p>}
-        <h2 className={s.title}>xx59 headphones</h2>
-        <p className={s.desc}>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
-        <p className={s.price}>$899</p>
-        <div className={s.addToCartContainer}>
-          <Qty />
+      <div className="flexy-col-start md:w-1/2 md:ml-6">
+        {product.new && <p className="uppercase text-md font-normal text-accent tracking-superWidest mb-4">new product</p>}
+        <h2 className="mt-0 text-3xl lg:text-4xl uppercase font-bold max-w-md mb-4 lg:mb-8">{product.name}</h2>
+        <p className="mt-0 text-darkTer font-light text-md max-w-lg lg:max-w-md mb-4 lg:mb-8">{product.description}</p>
+        <p className="font-bold text-lg tracking-wider mb-4 lg:mb-8">${product.price}</p>
+        <div className="w-full flex justify-between lg:justify-start">
+          <Qty className="mr-4" />
           <Button text={"add to cart"} type={"one"} />
-        </div> 
+        </div>
       </div>
     </div>
   )

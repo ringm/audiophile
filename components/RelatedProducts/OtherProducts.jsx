@@ -1,11 +1,11 @@
-import s from './OtherProducts.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/root/components/shared/Button';
 
-export function OtherProducts({ img, title }) {
+export function OtherProducts({ id, img, title, slug, onProductSelect }) {
   return (
-    <div className={s.container}>
-      <div className={s.imgContainer}>
+    <div className="relative flexy-col-center w-full odd:my-8 md:ml-8 md:first:ml-0">
+      <div className="relative mx-auto w-full h-[180px] lg:h-[320px] mb-4 rounded overflow-hidden">
         <Image
           src={img}
           layout="fill"
@@ -13,8 +13,10 @@ export function OtherProducts({ img, title }) {
           alt={title}
         />
       </div>
-      <h3 className={s.title}>{title}</h3>
-      <Button type={"one"} text={"shop"} />
-    </div>
+      <h3 className="text-center m-2 uppercase font-semibold text-xl mb-6 max-w-md">{title}</h3>
+      <Link as={`/category/${slug}`} href="/[category]/[product]">
+        <Button type={"one"} text={"shop"} onClick={() => onProductSelect(id)} />
+      </Link>
+    </div >
   )
 }
