@@ -6,7 +6,7 @@ import { FeaturedProducts } from '@/root/components/FeaturedProducts';
 import About from '@/root/components/About';
 import { Footer } from '@/root/components/Footer';
 
-export default function Home({ onProductSelect, onCategorySelect }) {
+export default function Home({ cartVisibility, onCartVisibility, cartItems }) {
   return (
     <>
       <Head>
@@ -15,12 +15,12 @@ export default function Home({ onProductSelect, onCategorySelect }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;800&display=swap" rel="stylesheet"></link>
       </Head>
-      <NavBar />
-      <Hero onProductSelect={onProductSelect} />
-      <ProductCategories onCategorySelect={onCategorySelect} />
-      <FeaturedProducts onProductSelect={onProductSelect} />
+      <NavBar cartVisibility={cartVisibility} onCartVisibility={onCartVisibility} cartItems={cartItems} />
+      <Hero />
+      <ProductCategories />
+      <FeaturedProducts />
       <About />
-      <Footer onCategorySelect={onCategorySelect} />
+      <Footer />
     </>
   )
 }

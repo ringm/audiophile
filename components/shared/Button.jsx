@@ -1,7 +1,8 @@
+import React from 'react';
 import styles from './Button.module.scss';
 import cn from 'classnames';
 
-export function Button({ text = "shop", type = "three", width = "width: max-content", style = "", onClick }) {
+export const Button = React.forwardRef(({ text = "shop", type = "three", width = "width: max-content", style = "", onClick, href }, ref) => {
   return (
     <span className={`${cn({
       [styles.button_one]: type === "one",
@@ -9,6 +10,6 @@ export function Button({ text = "shop", type = "three", width = "width: max-cont
       [styles.button_three]: type === "three",
       [styles.button_four]: type === "four"
     })} ${width} ${style}`}
-      onClick={onClick}>{text}</span>
+      onClick={onClick} ref={ref} href={href}>{text}</span>
   )
-}
+})

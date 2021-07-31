@@ -1,3 +1,4 @@
+import productData from '../data.json';
 import useDimensions from "react-cool-dimensions";
 import { getDevice } from "@/root/utils/helpers";
 import { useRouter } from 'next/router';
@@ -9,7 +10,29 @@ import { ProductCategories } from "@/root/components/ProductCategories";
 import About from "@/root/components/About";
 import { Footer } from "@/root/components/Footer";
 
-export default function Category({ selectedCategory, onProductSelect, onCategorySelect }) {
+export async function getStaticProps({ params }) {
+  const category = productData.filter(product => product.category === params.category);
+  return {
+    props: {
+      category: category,
+    }
+  }
+}
+
+export async function getStaticPaths() {
+  const categories = productData.reduce((arr, product) => {
+    if (!arr.find(category => category === product.category)) {
+      arr.push(product.category);
+    }
+    return arr;
+  }, []);
+  const paths = categories.map(cat => ({
+    params: { category: cat }
+  }));
+  return { paths, fallback: false }
+}
+
+export default function Category({ category }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -36,17 +59,16 @@ export default function Category({ selectedCategory, onProductSelect, onCategory
         ref={observe}
         title={router.query.category}
       />
-      {selectedCategory.map(product => {
+      {category.map(product => {
         return (
           <Product
             key={product.id}
             product={product}
             img={product.image[device]}
-            onProductSelect={onProductSelect}
           />
         )
       })}
-      <ProductCategories styles={`mb-24`} onCategorySelect={onCategorySelect} />
+      <ProductCategories styles={`mb-24`} />
       <About />
       <Footer />
     </>

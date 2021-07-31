@@ -2,7 +2,7 @@ import useDimensions from "react-cool-dimensions";
 import { getDevice } from '@/root/utils/helpers';
 import { OtherProducts } from './OtherProducts';
 
-export function RelatedProducts({ product, onProductSelect }) {
+export function RelatedProducts({ product }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -23,11 +23,10 @@ export function RelatedProducts({ product, onProductSelect }) {
           return (
             <OtherProducts
               key={other.id}
-              id={other.id}
               img={other.image[device]}
               title={other.name}
               slug={other.slug}
-              onProductSelect={onProductSelect}
+              category={other.category}
             />
           )
         })}

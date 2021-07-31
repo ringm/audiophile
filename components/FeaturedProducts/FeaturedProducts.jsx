@@ -2,7 +2,7 @@ import useDimensions from "react-cool-dimensions";
 import { getDevice } from "@/root/utils/helpers.js";
 import { FeaturedProductOne, FeaturedProductTwo, FeaturedProductThree } from "./Products";
 
-export function FeaturedProducts({ onProductSelect }) {
+export function FeaturedProducts() {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -20,20 +20,17 @@ export function FeaturedProducts({ onProductSelect }) {
       <div className="container flexy-col-center">
         <FeaturedProductOne
           productID={6}
-          onProductSelect={onProductSelect}
           pic={`/assets/home/${device}/image-speaker-zx9.png`}
           title={"zx9 speaker"}
           txt={"Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."}
         />
         <FeaturedProductTwo
           productID={5}
-          onProductSelect={onProductSelect}
           pic={`/assets/home/${device}/image-speaker-zx7.jpg`}
           title={"zx7 speaker"}
         />
         <FeaturedProductThree
           productID={1}
-          onProductSelect={onProductSelect}
           pic={`/assets/home/${device}/image-earphones-yx1.jpg`}
           title={"yx1 earphones"}
         />

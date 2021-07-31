@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/root/components/shared/Button';
 
-export function FeaturedProductOne({ pic, title, txt, productID, onProductSelect }) {
+export function FeaturedProductOne({ pic, title, txt }) {
   return (
     <div className="flexy-col-center lg:flexy-row-center rounded bg-accent h-600px md:h-720px lg:h-520px px-8 w-full overflow-hidden relative mb-8">
       <div className="circle w-[280px] md:w-[475px] h-[280px] md:h-[475px] top-8 md:top-4 lg:top-1/2 lg:left-10"></div>
@@ -19,8 +19,8 @@ export function FeaturedProductOne({ pic, title, txt, productID, onProductSelect
       <div className="flexy-col-center lg:items-start w-full lg:w-5/12 lg:ml-12">
         <h2 className="text-white text-4xl md:text-5xl font-semibold uppercase text-center lg:text-left relative z-1 my-6">{title}</h2>
         <p className="text-center lg:text-left text-lightSec font-light mb-8 max-w-prose">{txt}</p>
-        <Link as="/speakers/zx9-speaker" href="/[category]/[product]">
-          <Button text={"see product"} type={"four"} onClick={() => onProductSelect(productID)} />
+        <Link as="/speakers/zx9-speaker" href="/[category]/[product]" passHref>
+          <Button text={"see product"} type={"four"} />
         </Link>
       </div>
     </div>

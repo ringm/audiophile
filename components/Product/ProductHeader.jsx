@@ -5,7 +5,7 @@ import { Qty } from '@/root/components/shared/Qty';
 import { Button } from '@/root/components/shared/Button';
 
 
-export function ProductHeader({ product }) {
+export function ProductHeader({ product, onAddToCart }) {
 
   const { observe, unobserve, width, height, entry } = useDimensions({
     onResize: ({ observe, unobserve, width, height, entry }) => {
@@ -35,7 +35,7 @@ export function ProductHeader({ product }) {
         <p className="font-bold text-lg tracking-wider mb-4 lg:mb-8">${product.price}</p>
         <div className="w-full flex justify-between lg:justify-start">
           <Qty className="mr-4" />
-          <Button text={"add to cart"} type={"one"} />
+          <Button text={"add to cart"} type={"one"} onClick={() => onAddToCart(product.id)} />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/root/components/shared/Button';
 
-export function Product({ product, img, onProductSelect }) {
+export function Product({ product, img }) {
   return (
     <div className="flexy-col-center mt-4 md:mt-12 lg:first:mt-0">
       <div className="container lg:flexy-row-center lg:even:flexy-row-reverse-center">
@@ -19,8 +19,8 @@ export function Product({ product, img, onProductSelect }) {
           {product.new && <p className="uppercase text-center text-accent text-sm tracking-superWidest font-normal mb-2 mt-2">new product</p>}
           <h2 className="uppercase text-center font-bold lg:text-left text-3xl md:text-4xl tracking-wider max-w-md my-4">{product.name}</h2>
           <p className="mt-0 text-darkTer font-sm max-w-lg lg:max-w-md mb-6">{product.description}</p>
-          <Link as={`/${product.category}/${product.slug}`} href="/[category]/[product]">
-            <Button text={"see product"} type={"one"} onClick={() => onProductSelect(product.id)} />
+          <Link as={`/${product.category}/${product.slug}`} href="/[category]/[product]" passHref>
+            <Button text={"see product"} type={"one"} />
           </Link>
         </div>
       </div>
