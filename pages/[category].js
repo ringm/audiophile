@@ -1,14 +1,35 @@
-import productData from '../data.json';
-import useDimensions from "react-cool-dimensions";
-import { getDevice } from "@/root/utils/helpers";
+import productData from '@/root/data.json';
+import { BasicLayout } from '../components/layout/BasicLayout';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
-import NavBar from "@/root/components/NavBar";
-import { SubNav } from "@/root/components/SubNav";
 import { Product } from '@/root/components/Product';
 import { ProductCategories } from "@/root/components/ProductCategories";
-import About from "@/root/components/About";
-import { Footer } from "@/root/components/Footer";
+
+export default function Category({ category, device }) {
+
+  const router = useRouter();
+
+  return (
+    <>
+      <div className="flexy-col-center bg-black py-4 w-full">
+        <div className="flexy-col-center container">
+          <h2 className="text-white text-center uppercase text-3xl font-medium tracking-wider">{router.query.category}</h2>
+        </div>
+      </div>
+      {category.map(product => {
+        return (
+          <Product
+            key={product.id}
+            product={product}
+            img={product.image[device]}
+          />
+        )
+      })}
+      <ProductCategories styles={`mb-24`} />
+    </>
+  )
+}
+
+Category.Layout = BasicLayout;
 
 export async function getStaticProps({ params }) {
   const category = productData.filter(product => product.category === params.category);
@@ -30,47 +51,4 @@ export async function getStaticPaths() {
     params: { category: cat }
   }));
   return { paths, fallback: false }
-}
-
-export default function Category({ category }) {
-
-  const { observe, unobserve, width, height, entry } = useDimensions({
-    onResize: ({ observe, unobserve, width, height, entry }) => {
-      // Triggered whenever the size of the target is changed...
-
-      unobserve(); // To stop observing the current target element
-      observe(); // To re-start observing the current target element
-    },
-  });
-
-  const device = getDevice(width);
-  const router = useRouter();
-
-  return (
-    <>
-      <Head>
-        <title>audiophile</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;800&display=swap" rel="stylesheet"></link>
-      </Head>
-      <NavBar bgColor='black' />
-      <SubNav
-        ref={observe}
-        title={router.query.category}
-      />
-      {category.map(product => {
-        return (
-          <Product
-            key={product.id}
-            product={product}
-            img={product.image[device]}
-          />
-        )
-      })}
-      <ProductCategories styles={`mb-24`} />
-      <About />
-      <Footer />
-    </>
-  )
 }

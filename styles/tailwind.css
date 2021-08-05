@@ -2,13 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply uppercase tracking-wider font-semibold text-sm w-max text-center cursor-pointer relative z-50;
-  }
-}
-
 @layer utilities {
+  .btn {
+    @apply uppercase tracking-widest font-medium text-xs transition-all px-8 py-4 cursor-pointer inline-block z-40 text-center select-none;
+  }
+
+  .btn-accent {
+    @apply text-white bg-accent  hover:bg-accentSec;
+  }
+
+  .btn-transparent {
+    @apply bg-transparent hover:bg-black text-darkSec hover:text-white border border-solid border-black;
+  }
+
+  .btn-arrow {
+    @apply bg-transparent text-darkTer hover:text-accent font-medium flex items-center;
+  }
+
+  .btn-black {
+    @apply bg-black hover:bg-darkTer text-white;
+  }
+
+  .added {
+    background-color: #3eb336 !important;
+    cursor: unset;
+  }
+
+  .btn-arrow::after {
+    content: '';
+    width: 8px;
+    height: 12px;
+    background-image: url('../public/assets/shared/icon-arrow-right.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 12px;
+  }
+
   .circle {
     @apply bg-transparent border border-accentSec rounded-full absolute z-0;
   }

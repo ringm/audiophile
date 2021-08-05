@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/root/components/shared/Button';
 
 export function OtherProducts({ img, title, slug, category }) {
   return (
@@ -14,8 +13,8 @@ export function OtherProducts({ img, title, slug, category }) {
         />
       </div>
       <h3 className="text-center m-2 uppercase font-semibold text-xl mb-6 max-w-md">{title}</h3>
-      <Link as={`/${category}/${slug}`} href="/[category]/[product]" passHref>
-        <Button type={"one"} text={"shop"} />
+      <Link as={`/${category}/${slug}`} href="/[category]/[product]">
+        <span className="btn btn-accent">shop</span>
       </Link>
     </div >
   )

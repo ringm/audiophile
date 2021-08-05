@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-export function Footer() {
+export default function Footer() {
   return (
     <div className="flexy-col-center bg-dark w-full">
       <div className="container flexy-col-center md:flexy-col-start">

@@ -1,8 +1,8 @@
 import { Category } from "./Category";
 
-export function ProductCategories({ styles }) {
+export function ProductCategories() {
   return (
-    <div className={`flexy-col-center mt-24 ${styles}`}>
+    <div className="flexy-col-center mt-24">
       <div className="container flex flexy-col-center md:flexy-row-center">
         <Category
           category={"headphones"}

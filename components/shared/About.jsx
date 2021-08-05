@@ -1,22 +1,8 @@
-import useDimensions from "react-cool-dimensions";
 import Image from 'next/image';
-import { getDevice } from "@/root/utils/helpers";
 
-export default function About() {
-
-  const { observe, unobserve, width, height, entry } = useDimensions({
-    onResize: ({ observe, unobserve, width, height, entry }) => {
-      // Triggered whenever the size of the target is changed...
-
-      unobserve(); // To stop observing the current target element
-      observe(); // To re-start observing the current target element
-    },
-  });
-
-  const device = getDevice(width);
-
+export default function About({ device }) {
   return (
-    <div ref={observe} className="flexy-col-center mb-28">
+    <div className="flexy-col-center mb-28 mt-28">
       <div className="relative container flexy-col-center lg:flexy-row-center">
         <div className="relative h-320px w-full lg:h-600px lg:w-1/2 lg:ml-20">
           <Image

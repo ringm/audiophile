@@ -1,4 +1,4 @@
-import { TextInput, FieldSet, PhoneInput, EmailInput, RadioGroup, NumberInput } from "./formElements";
+import { TextInput, FieldSet, PhoneInput, EmailInput, RadioGroup } from "./formElements";
 
 export function CheckOutForm() {
   return (
@@ -18,8 +18,8 @@ export function CheckOutForm() {
         </FieldSet>
         <FieldSet legend="payment details" gridCols="grid-cols-1 md:grid-cols-2">
           <RadioGroup label="payment method" options={['e-Money', 'Cash on Delivery']} colSpan="md:col-span-2" />
-          <NumberInput label="e-Money Number" id="emoneyNumber" value="2345987" />
-          <NumberInput label="e-Money Pin" id="emoneyPIN" value="6891" />
+          <TextInput label="e-Money Number" id="emoneyNumber" value="2345987" />
+          <TextInput label="e-Money Pin" id="emoneyPIN" value="6891" />
         </FieldSet>
       </form>
     </div >

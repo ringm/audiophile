@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/root/components/shared/Button';
 
 export function Category({ pic, category }) {
   return (
@@ -15,8 +14,8 @@ export function Category({ pic, category }) {
         />
       </div>
       <h3 className="relative z-1 m-0 mt-4 uppercase font-medium text-l tracking-wide">{category}</h3>
-      <Link as={`/${category}`} href="/[category]" passHref>
-        <Button />
+      <Link as={`/${category}`} href="/[category]">
+        <span className="btn btn-arrow">shop</span>
       </Link>
     </div>
   )
