@@ -21,7 +21,7 @@ export function OrderConfirmation({ cartItems, onOrderConfirmed, grandTotal, onC
             <p className="text-medium tracking-wider font-medium md:text-xl text-white">${formatMoney(grandTotal.toFixed(1))}</p>
           </div>
         </div>
-        <Link href="/">
+        <Link href="/" passHref>
           <span
             className="btn btn-accent w-full"
             onClick={() => {

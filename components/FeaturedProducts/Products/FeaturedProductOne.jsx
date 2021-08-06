@@ -18,7 +18,7 @@ export function FeaturedProductOne({ pic, title, txt }) {
       <div className="flexy-col-center lg:items-start w-full lg:w-5/12 lg:ml-12">
         <h2 className="text-white text-4xl md:text-5xl font-semibold uppercase text-center lg:text-left relative z-1 my-6">{title}</h2>
         <p className="text-center lg:text-left text-lightSec font-light mb-8 max-w-prose">{txt}</p>
-        <Link as="/speakers/zx9-speaker" href="/[category]/[product]">
+        <Link as="/speakers/zx9-speaker" href="/[category]/[product]" passHref>
           <span className="btn btn-black">see product</span>
         </Link>
       </div>

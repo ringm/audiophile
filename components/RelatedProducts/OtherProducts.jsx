@@ -13,7 +13,7 @@ export function OtherProducts({ img, title, slug, category }) {
         />
       </div>
       <h3 className="text-center m-2 uppercase font-semibold text-xl mb-6 max-w-md">{title}</h3>
-      <Link as={`/${category}/${slug}`} href="/[category]/[product]">
+      <Link as={`/${category}/${slug}`} href="/[category]/[product]" passHref>
         <span className="btn btn-accent">shop</span>
       </Link>
     </div >

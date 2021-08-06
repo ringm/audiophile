@@ -15,16 +15,16 @@ export default function Footer() {
           />
         </div>
         <ul className="mb-8 flexy-col-center md:flexy-row-center">
-          <Link as="/" href="/">
+          <Link as="/" href="/" passHref>
             <li className="uppercase text-md font-semibold tracking-wider text-white hover:text-accent mt-4 first:mt-0 md:mt-0 md:ml-8 md:first:ml-0 cursor-pointer">home</li>
           </Link>
-          <Link as="/headphones" href="/[category]">
+          <Link as="/headphones" href="/[category]" passHref>
             <li className="uppercase text-md font-semibold tracking-wider text-white hover:text-accent mt-4 first:mt-0 md:mt-0 md:ml-8 md:first:ml-0 cursor-pointer">headphones</li>
           </Link>
-          <Link as="/speakers" href="/[category]">
+          <Link as="/speakers" href="/[category]" passHref>
             <li className="uppercase text-md font-semibold tracking-wider text-white hover:text-accent mt-4 first:mt-0 md:mt-0 md:ml-8 md:first:ml-0 cursor-pointer">speakers</li>
           </Link>
-          <Link as="/earphones" href="/[category]">
+          <Link as="/earphones" href="/[category]" passHref>
             <li className="uppercase text-md font-semibold tracking-wider text-white hover:text-accent mt-4 first:mt-0 md:mt-0 md:ml-8 md:first:ml-0 cursor-pointer">earphones</li>
           </Link>
         </ul>

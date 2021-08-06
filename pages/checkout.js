@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CheckOutForm, OrderSummary, OrderConfirmation } from "@/root/components/CheckOut";
@@ -22,28 +23,33 @@ export default function CheckOut({ cartItems, onCartDelete }) {
   const grandTotal = cartTotal + shipping + vat;
 
   return (
-    <div className="flexy-col-center lg:mt-12">
-      <div className="container lg:flex lg:items-start mb-20">
-        <CheckOutForm
-          register={register}
-          handleSubmit={handleSubmit}
-          errors={errors}
-          onOrderConfirmed={handleOrderConfirmed}
-        />
-        <OrderSummary
-          cartItems={cartItems}
-          cartTotal={cartTotal}
-          shipping={shipping}
-          vat={vat}
-          grandTotal={grandTotal}
-        />
-        {orderConfirmed &&
-          <OrderConfirmation
-            cartItems={cartItems}
+    <>
+      <Head>
+        <title>audiophile</title>
+      </Head>
+      <div className="flexy-col-center lg:mt-12">
+        <div className="container lg:flex lg:items-start mb-20">
+          <CheckOutForm
+            register={register}
+            handleSubmit={handleSubmit}
+            errors={errors}
             onOrderConfirmed={handleOrderConfirmed}
+          />
+          <OrderSummary
+            cartItems={cartItems}
+            cartTotal={cartTotal}
+            shipping={shipping}
+            vat={vat}
             grandTotal={grandTotal}
-            onCartDelete={onCartDelete} />}
+          />
+          {orderConfirmed &&
+            <OrderConfirmation
+              cartItems={cartItems}
+              onOrderConfirmed={handleOrderConfirmed}
+              grandTotal={grandTotal}
+              onCartDelete={onCartDelete} />}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

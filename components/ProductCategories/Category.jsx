@@ -14,7 +14,7 @@ export function Category({ pic, category }) {
         />
       </div>
       <h3 className="relative z-1 m-0 mt-4 uppercase font-medium text-l tracking-wide">{category}</h3>
-      <Link as={`/${category}`} href="/[category]">
+      <Link as={`/${category}`} href="/[category]" passHref>
         <span className="btn btn-arrow">shop</span>
       </Link>
     </div>

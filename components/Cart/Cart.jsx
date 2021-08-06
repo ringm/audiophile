@@ -32,7 +32,7 @@ export function Cart({ onCartVisibility, cartItems, onCartChange, onCartDelete }
             <p className="text-black font-semibold text-lg">${formatMoney(cartTotal)}</p>
           </div>
           {cartItems.length > 0 &&
-            <Link as="/checkout" href="/checkout">
+            <Link as="/checkout" href="/checkout" passHref>
               <span className="btn btn-accent w-full" onClick={() => onCartVisibility(false)}>checkout</span>
             </Link>
           }

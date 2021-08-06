@@ -7,6 +7,7 @@ export function CartItem({ item, onCartChange, formatMoney }) {
       <div className="relative w-[64px] h-[64px] overflow-hidden rounded">
         <Image
           src={item.img}
+          alt={item.name}
           layout="fill"
           objectFit="cover"
         />

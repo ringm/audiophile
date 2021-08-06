@@ -14,7 +14,7 @@ export default function NavBar({ cartVisibility, onCartVisibility, cartItems, on
             width={16}
             height={15}
           />
-          <Link href="/">
+          <Link href="/" passHref>
             <Image
               src="/assets/shared/logo.svg"
               alt="company-logo"

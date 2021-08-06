@@ -8,7 +8,7 @@ export function Hero() {
           <p className="uppercase text-sm text-darkTer tracking-superWidest mb-4">new product</p>
           <h1 className="uppercase text-white text-center lg:text-left font-bold text-4xl lg:text-5xl mb-6 tracking-wide max-w-md">XX99 Mark II Headphones</h1>
           <p className="text-center lg:text-left text-darkTer mt-0 mb-6 max-w-md">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-          <Link as="/headphones/xx99-mark-two-headphones" href="/[category]/[product]">
+          <Link as="/headphones/xx99-mark-two-headphones" href="/[category]/[product]" passHref>
             <span className="btn btn-accent">see product</span>
           </Link>
         </div>

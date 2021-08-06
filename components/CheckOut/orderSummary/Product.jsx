@@ -6,6 +6,7 @@ export function Product({ img, name, price, qty }) {
       <div className="relative w-[64px] h-[64px] overflow-hidden rounded mr-4">
         <Image
           src={img}
+          alt={name}
           layout="fill"
           objectFit="contain"
         />

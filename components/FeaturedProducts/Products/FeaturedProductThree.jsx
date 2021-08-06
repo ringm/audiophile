@@ -15,7 +15,7 @@ export function FeaturedProductThree({ pic, title }) {
       </div>
       <div className="flexy-col-start bg-lightSec rounded py-6 md:h-full md:w-1/2 md:mt-0 md:ml-8">
         <h2 className="relative z-1 uppercase text-3xl font-semibold mt-0 ml-9 md:ml-12 lg:ml-24 mb-4">{title}</h2>
-        <Link as="/earphones/yx1-earphones" href="[category]/[product]">
+        <Link as="/earphones/yx1-earphones" href="[category]/[product]" passHref>
           <span className="btn btn-transparent ml-9 md:ml-12 lg:ml-24">see product</span>
         </Link>
       </div>

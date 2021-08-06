@@ -11,7 +11,7 @@ export function FeaturedProductTwo({ title, pic }) {
         objectFit="cover"
       />
       <h2 className="relative z-1 uppercase text-3xl font-semibold mt-0 ml-9 md:ml-12 lg:ml-24 mb-4">{title}</h2>
-      <Link as="/speakers/zx7-speaker" href="[category]/[product]">
+      <Link as="/speakers/zx7-speaker" href="[category]/[product]" passHref>
         <span className="btn btn-transparent ml-9 md:ml-12 lg:ml-24">see product</span>
       </Link>
     </div>
