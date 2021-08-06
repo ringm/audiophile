@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { CheckOutForm, OrderSummary, OrderConfirmation } from "@/root/components/CheckOut";
 
 export default function CheckOut({ cartItems, onCartDelete }) {
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [orderConfirmed, setOrderConfirmed] = useState(false);
 
   function handleOrderConfirmed(bool) {
@@ -22,14 +24,18 @@ export default function CheckOut({ cartItems, onCartDelete }) {
   return (
     <div className="flexy-col-center lg:mt-12">
       <div className="container lg:flex lg:items-start mb-20">
-        <CheckOutForm />
+        <CheckOutForm
+          register={register}
+          handleSubmit={handleSubmit}
+          errors={errors}
+          onOrderConfirmed={handleOrderConfirmed}
+        />
         <OrderSummary
           cartItems={cartItems}
           cartTotal={cartTotal}
           shipping={shipping}
           vat={vat}
           grandTotal={grandTotal}
-          onOrderConfirmed={handleOrderConfirmed}
         />
         {orderConfirmed &&
           <OrderConfirmation

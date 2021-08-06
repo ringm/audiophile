@@ -3,7 +3,7 @@ import Image from 'next/image';
 export function Product({ img, name, price, qty }) {
   return (
     <div className="w-full flex items-center justify-between odd:my-6">
-      <div className="relative w-[64px] h-[64px] overflow-hidden rounded">
+      <div className="relative w-[64px] h-[64px] overflow-hidden rounded mr-4">
         <Image
           src={img}
           layout="fill"

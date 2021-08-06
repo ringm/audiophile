@@ -13,7 +13,7 @@ export function OrderConfirmation({ cartItems, onOrderConfirmed, grandTotal, onC
         <p className="text-darkTer md: mb-8">You will recieve an email confirmation shortly.</p>
         <div className="flexy-col-center md:flex md:flex-row md:items-stretch mb-4 md:mb-8">
           <div className="flexy-col-center w-full mb-4">
-            <Product key={cartItems[0].id} name={cartItems[0].name} img={cartItems[0].img} price={formatMoney(cartItems[0].price)} qty={cartItems[0].qty} />
+            <Product key={cartItems[0]?.id} name={cartItems[0]?.name} img={cartItems[0]?.img} price={formatMoney(cartItems[0]?.price)} qty={cartItems[0]?.qty} />
             {cartItems.length > 1 && <p className="text-darkTer font-medium text-sm">And {cartItems.length - 1} other item(s)</p>}
           </div>
           <div className="flexy-col-start p-4 md:px-6 bg-black w-full rounded-b md:rounded-tr md:rounded-br md:rounded-bl-none md:ml-4">

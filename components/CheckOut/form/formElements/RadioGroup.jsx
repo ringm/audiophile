@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function RadioGroup({ label, options, colSpan = "" }) {
+export function RadioGroup({ id, label, options, colSpan = "" }) {
 
   const [selected, setSelected] = useState(0);
 
@@ -13,8 +13,7 @@ export function RadioGroup({ label, options, colSpan = "" }) {
             <label
               key={idx}
               className="flexy-row-start border border-lightTer rounded p-4 cursor-pointer"
-              onClick={() => setSelected(idx)}
-            >
+              onClick={() => setSelected(idx)}>
               <span className="mr-3 flexy-row-start">
                 <input className="opacity-0 w-0 h-0" type="radio" id={option} name="paymemt" value={option} />
                 <span className={`block w-5 h-5 rounded-full border-4 border-white ring-1 ring-lightTer ${selected === idx ? "bg-accent" : ""}`}></span>

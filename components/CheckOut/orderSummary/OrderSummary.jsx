@@ -1,7 +1,7 @@
 import { Product } from './Product';
 import { formatMoney } from '@/root/utils/helpers';
 
-export function OrderSummary({ cartItems, onOrderConfirmed, cartTotal, shipping, vat, grandTotal }) {
+export function OrderSummary({ cartItems, cartTotal, shipping, vat, grandTotal }) {
 
   return (
     <div className="flexy-col-start mt-8 lg:mt-0 lg:w-5/12">
@@ -29,7 +29,7 @@ export function OrderSummary({ cartItems, onOrderConfirmed, cartTotal, shipping,
           <p className="font-bold text-accent">${formatMoney(grandTotal.toFixed(1))}</p>
         </div>
       </div>
-      <span className="btn btn-accent w-full" onClick={() => onOrderConfirmed(true)}>continue and pay</span>
+      <label htmlFor="submit-form" className="btn btn-accent w-full">continue and pay</label>
     </div>
   )
 }
