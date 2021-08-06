@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Cart } from '@/root/components/Cart';
 
 export default function NavBar({ cartVisibility, onCartVisibility, cartItems, onCartChange, onCartDelete }) {
@@ -6,18 +7,28 @@ export default function NavBar({ cartVisibility, onCartVisibility, cartItems, on
     <div>
       <div className="bg-black flexy-row-center w-full py-7">
         <div className="relative flex justify-between items-center container">
-          <img
+          <Image
             src="/assets/shared/icon-hamburger.svg"
             alt="menu-icon"
-            className="cursor-pointer w-[16px] h-[15px cursor-pointer]"
+            className="cursor-pointer"
+            width={16}
+            height={15}
           />
           <Link href="/">
-            <img src="/assets/shared/logo.svg" alt="company-logo" className="w-[143px] h-[25px] cursor-pointer" />
+            <Image
+              src="/assets/shared/logo.svg"
+              alt="company-logo"
+              width={143}
+              height={25}
+              className="cursor-pointer"
+            />
           </Link>
-          <img
+          <Image
             src="/assets/shared/icon-cart.svg"
             alt="cart-icon"
-            className="cursor-pointer w-[23px] h-[20px]"
+            className="cursor-pointer"
+            width={23}
+            height={20}
             onClick={() => onCartVisibility(true)}
           />
           {cartItems.length > 0 &&
