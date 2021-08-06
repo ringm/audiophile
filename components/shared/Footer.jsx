@@ -34,28 +34,31 @@ export default function Footer() {
           <ul className="flexy-row-center md:flexy-row-start mb-8">
             <li className="ml-6 first:ml-0">
               <a href="#">
-                <img
+                <Image
                   src="/assets/shared/icon-facebook.svg"
                   alt="facebook-icon"
-                  className="w-[24px] h-[24px]"
+                  width={24}
+                  height={24}
                 />
               </a>
             </li>
             <li className="ml-6 first:ml-0">
               <a href="#">
-                <img
+                <Image
                   src="/assets/shared/icon-twitter.svg"
                   alt="twitter-icon"
-                  className="w-[24px] h-[24px]"
+                  width={24}
+                  height={24}
                 />
               </a>
             </li>
             <li className="ml-6 first:ml-0">
               <a href="#">
-                <img
+                <Image
                   src="/assets/shared/icon-instagram.svg"
                   alt="instagram-icon"
-                  className="w-[24px] h-[24px]"
+                  width={24}
+                  height={24}
                 />
               </a>
             </li>
