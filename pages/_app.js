@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useDimensions from "react-cool-dimensions";
 import { getDevice } from "@/root/utils/helpers";
 import productData from '../data.json';
@@ -10,16 +10,16 @@ function MyApp({ Component, pageProps }) {
   const { observe, width, unobserve } = useDimensions({
     onResize: ({ observe, width, unobserve }) => {
       // Triggered whenever the size of the target is changed...
-
       unobserve(); // To stop observing the current target element
       observe(); // To re-start observing the current target element
     },
   });
 
+  const LOCAL_STORAGE_CART = "cartItems";
   const device = getDevice(width);
-
   const [cartVisibility, setCartVisibility] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const NestedLayout = Component.Layout || EmptyLayout;
 
   function handleCartVisibility(visibility) {
     setCartVisibility(visibility);
@@ -68,7 +68,16 @@ function MyApp({ Component, pageProps }) {
     setCartItems([]);
   }
 
-  const NestedLayout = Component.Layout || EmptyLayout;
+  useEffect(() => {
+    const storedCart = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_CART)
+    )
+    if(storedCart) setCartItems(storedCart)
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_CART, JSON.stringify(cartItems))
+  }, [cartItems])
 
   return (
 
