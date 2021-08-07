@@ -4,7 +4,7 @@ import { CartQty } from './CartQty';
 export function CartItem({ item, onCartChange, formatMoney }) {
   return (
     <div className="w-full flex items-center justify-between even:my-2">
-      <div className="relative w-[64px] h-[64px] overflow-hidden rounded">
+      <div className="relative w-[64px] h-[64px] overflow-hidden rounded mr-3">
         <Image
           src={item.img}
           alt={item.name}
