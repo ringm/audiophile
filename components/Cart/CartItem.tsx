@@ -1,7 +1,26 @@
+import React from 'react';
 import Image from 'next/image';
 import { CartQty } from './CartQty';
 
-export function CartItem({ item, onCartChange, formatMoney }) {
+interface Item {
+  id: number,
+  img: string,
+  name: string,
+  price: number,
+  qty: number
+}
+
+interface FormatMoney {
+  (price: number)
+}
+
+interface Props {
+  item: Item,
+  onCartChange: any,
+  formatMoney: FormatMoney
+}
+
+export const CartItem: React.FC<Props> = ({ item, onCartChange, formatMoney }) => {
   return (
     <div className="w-full flex items-center justify-between even:my-2">
       <div className="relative w-[64px] h-[64px] overflow-hidden rounded mr-3">

@@ -3,9 +3,24 @@ import { XIcon } from '@heroicons/react/solid';
 import { CartItem } from './CartItem';
 import { formatMoney } from '@/root/utils/helpers';
 
-export function Cart({ onCartVisibility, cartItems, onCartChange, onCartDelete }) {
+interface Item {
+  id: number,
+  img: string,
+  name: string,
+  price: number,
+  qty: number
+}
 
-  const cartTotal = cartItems.reduce((acc, curr) => {
+interface Props {
+  cartItems: Item[],
+  onCartVisibility: (visibility: boolean) => void,
+  onCartChange: () => void,
+  onCartDelete: () => void
+}
+
+export const Cart: React.FC<Props> = ({ onCartVisibility, cartItems, onCartChange, onCartDelete }) => {
+
+  const cartTotal: number = cartItems.reduce((acc: number, curr: Item) => {
     return acc + (curr.price * curr.qty);
   }, 0);
 
@@ -24,7 +39,7 @@ export function Cart({ onCartVisibility, cartItems, onCartChange, onCartDelete }
           </div>
           <div className="w-full grid grid-cols-1 gap-y-4 my-4">
             {cartItems.map(item => {
-              return <CartItem key={item.id} item={item} onCartChange={onCartChange} formatMoney={formatMoney} />
+              return <CartItem  key={item.id} item={item} onCartChange={onCartChange} formatMoney={formatMoney} />
             })}
           </div>
           <div className="w-full flex items-center justify-between mb-6">

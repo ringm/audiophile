@@ -5,6 +5,14 @@ import productData from '../data.json';
 import { DefaultLayout } from '@/root/components/layout';
 import '../styles/tailwind.css';
 
+interface CartItem {
+  id: number,
+  name: string,
+  img: string,
+  price: number,
+  qty: number
+}
+
 function MyApp({ Component, pageProps }) {
 
   const { observe, width, unobserve } = useDimensions({
@@ -15,20 +23,20 @@ function MyApp({ Component, pageProps }) {
     },
   });
 
-  const LOCAL_STORAGE_CART = "cartItems";
-  const device = getDevice(width);
-  const [cartVisibility, setCartVisibility] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const LOCAL_STORAGE_CART: string = "cartItems";
+  const device: "mobile" | "tablet" | "desktop" = getDevice(width);
+  const [cartVisibility, setCartVisibility] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const NestedLayout = Component.Layout || EmptyLayout;
 
-  function handleCartVisibility(visibility) {
+  function handleCartVisibility(visibility: boolean) {
     setCartVisibility(visibility);
   }
 
-  function handleAddToCart(id, qty) {
+  function handleAddToCart(id: number, qty:number) {
 
-    const currentCart = [...cartItems];
-    const idx = currentCart.findIndex(item => item.id === id);
+    const currentCart: CartItem[] = [...cartItems];
+    const idx: number = currentCart.findIndex(item => item.id === id);
 
     if (idx !== -1) {
 
@@ -38,7 +46,7 @@ function MyApp({ Component, pageProps }) {
     } else {
 
       const newItem = productData.find(product => product.id === id);
-      const newCartItem = {
+      const newCartItem: CartItem = {
         id: newItem.id,
         name: newItem.name,
         img: newItem.image.cart,
@@ -49,7 +57,7 @@ function MyApp({ Component, pageProps }) {
     }
   }
 
-  function handleCartChange(id, qty) {
+  function handleCartChange(id: number, qty: number) {
 
     const currentCart = [...cartItems];
     const idx = currentCart.findIndex(item => item.id === id);
